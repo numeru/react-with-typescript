@@ -54,6 +54,10 @@ const inputRef = useRef<HTMLInputElement>(null);
 - reducer의 state와 action의 type을 정해준다.
 
 ```ts
+export type Count = {
+  count: number;
+};
+
 type Action = { type: "INCREASE" } | { type: "DECREASE" };
 
 function reducer(state: Count, action: Action): Count {
