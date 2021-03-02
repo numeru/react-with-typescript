@@ -3,7 +3,7 @@ import React from "react";
 function App() {
   return (
     <div className="App">
-      <h1>App</h1>
+      <h1>React with TypeScript</h1>
     </div>
   );
 }
