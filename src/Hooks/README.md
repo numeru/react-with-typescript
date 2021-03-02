@@ -4,7 +4,7 @@
 
 - 기본적으로는 타입을 명시하지 않아도 괜찮다.
 
-```
+```ts
 const [name, setName] = useState("");
 ```
 
@@ -12,15 +12,15 @@ const [name, setName] = useState("");
 
 1. null값을 가질 수도 있는 경우
 
-```
-type Info = {name: string; description: string}
+```ts
+type Info = { name: string; description: string };
 const [info, setInfo] = useState<Info | null>(null);
 ```
 
 2. 객체, 배열의 경우
 
-```
-type Todo = {id: number; text: string; done: boolean};
+```ts
+type Todo = { id: number; text: string; done: boolean };
 const [todos, setTodos] = useState<Todo[]>([]);
 ```
 
