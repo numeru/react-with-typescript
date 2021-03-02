@@ -9,7 +9,7 @@ import React, { createContext, useContext, useReducer, Dispatch } from "react";
 ## 1. create context
 
 - state와 dispatch context를 따로 만든다.
-- state의 createContext는 generic으로 `<state의 type | undefined>`를 타입으로 한다.
+- state의 createContext는 generic으로 `<typeof state | undefined>`를 타입으로 한다.
 
 ```ts
 // Context Instance
@@ -37,11 +37,8 @@ const CountDispatchContext = createContext<CountDispatch | undefined>(
 - action의 Provider와 dispatch의 Provider를 모두 return한다.
 
 ```ts
-export const CountContextProvider = ({
-  children,
-}: {
-  children: React.ReactNode;
-}) => {
+export function CountContextProvider ({ children }: { children: React.ReactNode }) {
+
   const initialState = {
     count: 0,
   };
