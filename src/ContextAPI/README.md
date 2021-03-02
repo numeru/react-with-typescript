@@ -1,6 +1,6 @@
 # Context API
 
-## import
+## Import
 
 ```ts
 import React, { createContext, useContext, useReducer, Dispatch } from "react";
