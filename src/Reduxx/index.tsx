@@ -15,7 +15,7 @@ const Counter = () => {
 
   return (
     <div>
-      Clicked: <span>{value}</span> times
+      <span>{value}</span>
       <br />
       <span>{message}</span>
       <br />
