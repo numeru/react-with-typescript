@@ -1,9 +1,10 @@
-import React from "react";
+import React from 'react';
+import Counter from './Reduxx';
 
 function App() {
   return (
     <div className="App">
-      <h1>React with TypeScript</h1>
+      <Counter />
     </div>
   );
 }
