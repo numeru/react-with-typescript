@@ -11,7 +11,7 @@ export const store = configureStore({
 });
 
 // selector
-export type RootState = ReturnType<typeof store.getState>;
+type RootState = ReturnType<typeof store.getState>;
 
 export const selectCounter = (state: RootState) => state.counter;
 export const selectSwitch = (state: RootState) => state.switch;
