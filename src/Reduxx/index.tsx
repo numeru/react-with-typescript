@@ -21,7 +21,9 @@ const Counter = () => {
       <br />
       <button onClick={() => dispatch(increment('increase'))}>+1</button>
       <button onClick={() => dispatch(decrement('decrease'))}>-1</button>
-      <button onClick={() => dispatch(getCountStart())}>get count 100</button>
+      <button onClick={() => dispatch(getCountStart(value))}>
+        get count 100
+      </button>
       <br />
       {loading && <div>Loading...</div>}
       <br />
