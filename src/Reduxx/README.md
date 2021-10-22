@@ -3,5 +3,5 @@
 ## start
 
 ```
-yarn add redux react-redux @reduxjs/toolkit
+yarn add redux react-redux @reduxjs/toolkit redux-saga
 ```

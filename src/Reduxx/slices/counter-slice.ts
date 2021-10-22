@@ -3,11 +3,13 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 type InitialState = {
   value: number;
   message: string;
+  loading: boolean;
 };
 
 const initialState: InitialState = {
   value: 0,
   message: '',
+  loading: false,
 };
 
 export const counterSlice = createSlice({
@@ -22,10 +24,19 @@ export const counterSlice = createSlice({
       state.value -= 1;
       state.message = action.payload;
     },
+    getCountStart(state) {
+      state.loading = true;
+      state.message = '';
+    },
+    getCountDone(state, action: PayloadAction<number>) {
+      state.value = action.payload;
+      state.loading = false;
+    },
   },
 });
 
 export default counterSlice;
 
 // actions
-export const { increment, decrement } = counterSlice.actions;
+export const { increment, decrement, getCountStart, getCountDone } =
+  counterSlice.actions;

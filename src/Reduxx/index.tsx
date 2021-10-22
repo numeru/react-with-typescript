@@ -1,12 +1,12 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { decrement, increment } from './slices/counter-slice';
+import { decrement, getCountStart, increment } from './slices/counter-slice';
 import { change } from './slices/switch-slice';
 import { selectCounter, selectSwitch } from './store/store';
 
 const Counter = () => {
   const counterSelector = useSelector(selectCounter);
-  const { value, message } = counterSelector;
+  const { value, message, loading } = counterSelector;
 
   const switchSelector = useSelector(selectSwitch);
   const { turn } = switchSelector;
@@ -21,6 +21,9 @@ const Counter = () => {
       <br />
       <button onClick={() => dispatch(increment('increase'))}>+1</button>
       <button onClick={() => dispatch(decrement('decrease'))}>-1</button>
+      <button onClick={() => dispatch(getCountStart())}>get count 100</button>
+      <br />
+      {loading && <div>Loading...</div>}
       <br />
       <br />
       <span>{turn ? 'true' : 'false'}</span>
